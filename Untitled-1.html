@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loja Online</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SUSHI CALIFFÓRNIA</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="https://www.instagram.com/network_blaze/">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <!-- Produtos serão adicionados aqui pelo JavaScript -->
+    </section>
+
+    <footer>
+        <p>© 2024 Minha Loja Online. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+.product {
+    border: 1px solid #ddd;
+  
+
+</style>
+<script>
+    const products = [
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo1.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    { name: 'Produto 1', price: 'R$100,00', img: 'escudo-flamengo.jpg' },
+    // Adicione mais produtos conforme necessário
+];
+
+const productsSection = document.getElementById('products');
+
+products.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.classList.add('product');
+    productDiv.innerHTML = `
+        <img src="${product.img}" alt="${product.name}" style="width:100%">
+        <h3>${product.name}</h3>
+        <p>${product.price}</p>
+        <button>Comprar</button>`;
+
+    productsSection.appendChild(productDiv);
+});
+</script>
+<style>
+    .product button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.product button:hover {
+    background-color: #45a049;
+}
+</style>
+<style>
+    .product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    width: 200px; /* Largura fixa para o produto */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do produto */
+}
+.product img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do produto */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço disponível */
+    border-radius: 5px; /* Arredonda os cantos da imagem */
+}
+</style>
